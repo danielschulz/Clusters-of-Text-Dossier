@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='9.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 9000.15.0506.1800                                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='AggregatedFeatures' inline='true' name='stat-direct.42177.923245601851' version='9.0'>
+      <connection class='stat-direct' directory='G:/data/mess/x00/TextSamples 2/aggregated/github/Clusters-of-Text-Dossier/output/data' filename='AggregatedFeatures.RData' password='' server=''>
+        <relation name='AggregatedFeatures.RData' table='[AggregatedFeatures.RData]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>rownames</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rownames]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>rownames</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>X</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[X]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>X</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>media</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[media]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>media</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>domain</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[domain]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>domain</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>original_filesize</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[original_filesize]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>original_filesize</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>normalized_filesize</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[normalized_filesize]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>normalized_filesize</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frac_original_normalized</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[frac_original_normalized]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>frac_original_normalized</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARI</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ARI]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>ARI</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FRE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FRE]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>FRE</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FKGL</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FKGL]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>FKGL</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FOG</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FOG]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>FOG</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SMOG</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SMOG]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>SMOG</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CLI</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CLI]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>CLI</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LIX</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LIX]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>LIX</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RIX</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RIX]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>RIX</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>beau</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[beau]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>beau</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>isclassified</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[isclassified]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>isclassified</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prFull</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prFull]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>prFull</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prSparse</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prSparse]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>prSparse</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clFullBeauty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[clFullBeauty]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>clFullBeauty</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clSparseBeauty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[clSparseBeauty]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>clSparseBeauty</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clEqually</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[clEqually]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>clEqually</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prSum</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prSum]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>prSum</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clSum</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[clSum]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>clSum</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prSumSu</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prSumSu]</local-name>
+            <parent-name>[AggregatedFeatures.RData]</parent-name>
+            <remote-alias>prSumSu</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Fkgl' datatype='real' name='[FKGL]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Smog' datatype='real' name='[SMOG]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Beau' datatype='integer' datatype-customized='true' name='[beau]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Sum' caption='Cl Equally' datatype='integer' name='[clEqually]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Sum' caption='Cl Full Beauty' datatype='integer' name='[clFullBeauty]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Sum' caption='Cl Sparse Beauty' datatype='integer' name='[clSparseBeauty]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Sum' caption='Cl Sum' datatype='integer' name='[clSum]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Domain' datatype='string' name='[domain]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Frac Original Normalized' datatype='real' name='[frac_original_normalized]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Isclassified' datatype='integer' datatype-customized='true' name='[isclassified]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Media' datatype='string' name='[media]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Normalized Filesize' datatype='real' name='[normalized_filesize]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Original Filesize' datatype='real' name='[original_filesize]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Pr Full' datatype='real' name='[prFull]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Pr Sparse' datatype='real' name='[prSparse]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Pr Sum Su' datatype='real' name='[prSumSu]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Pr Sum' datatype='real' name='[prSum]' role='measure' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Rownames' datatype='integer' name='[rownames]' role='dimension' type='ordinal'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AggregatedFeatures' name='stat-direct.42177.923245601851' />
+          </datasources>
+          <datasource-dependencies datasource='stat-direct.42177.923245601851'>
+            <column datatype='string' name='[X]' role='dimension' type='nominal'>
+            </column>
+            <column caption='Beau' datatype='integer' datatype-customized='true' name='[beau]' role='dimension' type='ordinal'>
+            </column>
+            <column caption='Frac Original Normalized' datatype='real' name='[frac_original_normalized]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[X]' derivation='None' name='[none:X:nk]' pivot='key' type='nominal' />
+            <column-instance column='[beau]' derivation='None' name='[none:beau:ok]' pivot='key' type='ordinal' />
+            <column caption='Pr Sum Su' datatype='real' name='[prSumSu]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Pr Sum' datatype='real' name='[prSum]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[frac_original_normalized]' derivation='Sum' name='[sum:frac_original_normalized:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[prSum]' derivation='Sum' name='[sum:prSum:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[prSumSu]' derivation='Sum' name='[sum:prSumSu:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[stat-direct.42177.923245601851].[sum:prSumSu:qk]' />
+              <size column='[stat-direct.42177.923245601851].[sum:frac_original_normalized:qk]' />
+              <lod column='[stat-direct.42177.923245601851].[none:X:nk]' />
+            </encodings>
+            <reference-line axis-column='[stat-direct.42177.923245601851].[sum:prSum:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' scope='per-cell' symmetric='false' value-column='[stat-direct.42177.923245601851].[sum:prSum:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[stat-direct.42177.923245601851].[sum:prSum:qk]</rows>
+        <cols>[stat-direct.42177.923245601851].[none:beau:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[stat-direct.42177.923245601851].[sum:prSumSu:qk]' type='color' />
+            <card pane-specification-id='0' param='[stat-direct.42177.923245601851].[sum:frac_original_normalized:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[stat-direct.42177.923245601851].[none:beau:ok]</field>
+          <field>[stat-direct.42177.923245601851].[none:clEqually:ok]</field>
+          <field>[stat-direct.42177.923245601851].[none:clFullBeauty:ok]</field>
+          <field>[stat-direct.42177.923245601851].[none:clSparseBeauty:ok]</field>
+          <field>[stat-direct.42177.923245601851].[none:clSum:ok]</field>
+          <field>[stat-direct.42177.923245601851].[none:rownames:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='144' name='Sheet 2' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

@@ -1,69 +1,100 @@
 
-# SETUP WORKSPACE
-
-library(e1071)
-library(randomForest)
-library(kernlab)
-
-set.seed(4711)
-
-# clean
-rm(list = ls()[!(ls() %in% PERSISTENT_CONSTANTS)])
-
-
-# constants
-PERSISTENT_CONSTANTS = c("PERSISTENT_CONSTANTS")
-
-
-
 # INIT DATA
 
-# load trainings data: data
-dataLocation = "output\\data\\train.RData"
-a = load(dataLocation)
+# load aggregated text data
+dataLocation = "input\\data\\AggregatedFeatures.csv"
+data = read.csv2(dataLocation, header=TRUE, encoding="ANSI", sep=";", strip.white=TRUE, na.strings=c(""))
+
+data$beautiful = as.character(data$beautiful)
+data$beau = as.logical.factor(c(1:length(data$beautiful)))
+
+data$beau[is.na(data$beautiful)] = NA 
+data$beau["N" == data$beautiful] = FALSE 
+data$beau["Y" == data$beautiful] = TRUE
 
 
-# load test data: test
-dataLocation = "output\\data\\test.RData"
-b = load(dataLocation)
+data$classified = as.character(data$classified)
+data$isclassified = as.logical.factor(c(1:length(data$classified)))
+
+data$isclassified[is.na(data$classified)] = FALSE 
+data$isclassified["N" == data$classified] = FALSE 
+data$isclassified["Y" == data$classified] = TRUE
 
 
-names = names(test)
-test$survived = "0"
-test = test[c("survived", names)]
+data$beautiful = NULL
+data$classified = NULL
 
-rm(list=c("a", "b", "dataLocation", "names"))
 
-# x = lapply(data$survived, FUN= function (x) {return (x == "1")})
-# data$survived = FALSE
-# data$survived = as.factor(data$survived)
-# data$survived = c(x)
+rm(list=c("dataLocation"))
 
-testDataIndex = c(rep(FALSE, nrow(data)), rep(TRUE, nrow(test)))
-d = rbind(data, test)
 
-# d[c(TRUE, TRUE, rep(FALSE, 1307)),]$pclass = 5
+
+data$original_filesize = as.numeric(data$original_filesize)
+data$normalized_filesize = as.numeric(data$normalized_filesize)
+
+data$media = as.factor(data$media)
+data$domain = as.factor(data$domain)
+data$media = as.factor(data$media)
+
+data$frac_original_normalized = as.numeric(data$frac_original_normalized)
+data$ARI = as.numeric(data$ARI)
+data$FRE = as.numeric(data$FRE)
+data$FKGL = as.numeric(data$FKGL)
+data$FOG = as.numeric(data$FOG)
+data$SMOG = as.numeric(data$SMOG)
+data$CLI = as.numeric(data$CLI)
+data$LIX = as.numeric(data$LIX)
+data$RIX = as.numeric(data$RIX)
+
+data$frac_original_normalized = data$normalized_filesize / data$original_filesize
+
 
 
 # svm classification
-formula = survived ~ .
-d$name = as.factor(d$name)
-d$survived = as.factor(d$survived)
-d = na.roughfix(d)
+formulaFull = beau ~ media + domain + frac_original_normalized + ARI + FRE + FKGL + FOG + SMOG + CLI + LIX + RIX
+formulaSparse = beau ~ ARI + FRE + FKGL + FOG + SMOG + CLI + LIX + RIX
 
-# svm = ksvm(formula, data = data.frame(data), kernel="rbfdot", kpar=list(sigma=0.015), C=70, cross=4, prob.model=TRUE)
+aov(formulaFull, data)
+aov(formulaSparse, data)
 
-svm = ksvm(formula, data = d[!testDataIndex,], kernel="rbfdot", kpar=list(sigma=0.015), C=70, cross=4, prob.model=TRUE, na.action=na.roughfix)
-pr = predict(svm, newdata = d[testDataIndex,])
 
-# 
-dataLocation = "input\\data\\test.csv"
-rawData = read.csv2(dataLocation, header=TRUE, encoding="ANSI", sep=",", strip.white=TRUE, na.strings=c(""))
+svmFull = ksvm(formulaFull, data = data, kernel = "rbfdot", kpar=list(sigma = 0.015), C = 70, cross = 4, prob.model = TRUE)
+svmSparse = ksvm(formulaSparse, data = data, kernel = "rbfdot", kpar=list(sigma = 0.015), C = 70, cross = 4, prob.model = TRUE)
 
-names = names(rawData)
-rawData$survived = "0"
-rawData = rawData[c("survived", names)]
-rawData$survived = pr
 
-save(rawData, file="output\\data\\result.RData")
-write.table(rawData, file="output\\data\\result.csv", sep=",", row.names = FALSE)
+data$prFull = predict(svmFull, newdata = data)
+data$prSparse = predict(svmSparse, newdata = data)
+
+
+
+data$clFullBeauty[0 >= data$prFull] = FALSE
+data$clFullBeauty[0 < data$prFull] = TRUE
+
+data$clSparseBeauty[0 >= data$prSparse] = FALSE
+data$clSparseBeauty[0 < data$prSparse] = TRUE
+
+data$clEqually = data$clFullBeauty == data$clSparseBeauty
+
+
+data$prSum = data$prFull + data$prSparse
+
+data$clSum[0 >= data$prSum] = FALSE
+data$clSum[0 < data$prSum] = TRUE
+
+data$clCorrect = NA
+
+for (i in c(1:length(data$beau))) {
+  data[i,]$clCorrect = is.na(data[i,]$beau) || data[i,]$beau == data[i,]$clSum
+}
+
+data$prSumSu = scale(data$prSum)
+
+
+
+data$major = ALPHA_MAJOR_OPACITY[1]
+data[data$X == "Shakespeare",]$major = ALPHA_MAJOR_OPACITY[2]
+data[data$X == "Willcox",]$major = ALPHA_MAJOR_OPACITY[2]
+data$random = 330 + sample(seq(0,60, by=1), length(data$X), replace=TRUE)
+
+
+d = data[,c(1,15,17,18,19,20,21,22,23,24,25,26,27)]
